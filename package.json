@@ -1,0 +1,36 @@
+{
+  "name": "arduino-uno-dht11-iota-chrysalis",
+  "version": "1.0.0",
+  "description": "Send DHT11 sensor data to the IOTA Tangle using Indexation Payload (type 2) and Arduino Uno",
+  "scripts": {
+    "portscan": "serialport-list",
+    "send": "env-cmd  -f dev.env nodemon sendMessage.js",
+    "receive": "env-cmd  -f dev.env nodemon receiveMessage.js",
+    "genSeed": "env-cmd  -f dev.env nodemon generateSeed.js",
+    "genAddresses": "env-cmd  -f dev.env nodemon generateAddresses.js",
+    "receiveExample": "env-cmd  -f dev.env nodemon getMessagesExample.js"
+  },
+  "keywords": [
+    "DHT11",
+    "Sensor",
+    "IOTA",
+    "Tangle",
+    "Indexation Payload",
+    "IOTA Message",
+    "IOTA Chrysalis",
+    "Arduino Uno"
+  ],
+  "author": "Kristiyan Doykov",
+  "license": "MIT",
+  "dependencies": {
+    "@iota/client": "^2.2.3",
+    "@serialport/list": "^10.4.0",
+    "moment": "^2.29.1",
+    "serialport": "^10.4.0",
+    "crypto-js": "^4.1.1",
+    "env-cmd": "^10.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
