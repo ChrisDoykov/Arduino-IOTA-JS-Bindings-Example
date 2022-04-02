@@ -3,6 +3,7 @@
 
 #define DHTPIN 7
 #define DHTTYPE DHT11
+#define LED 3 // The pin the LED is connected to
 
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -23,13 +24,13 @@ void setup()
     delay(1500);
 
     dht.begin();
+
+    pinMode(LED, OUTPUT); // Declare the LED as an output
 }
 
 void loop()
 {
-    // Delay for the sensor to pick up data
-    delay(2000);
-
+    // Record new values
     float temperature = dht.readTemperature();
     float humidity = dht.readHumidity();
 
@@ -37,6 +38,8 @@ void loop()
 
     if (currentMillis - previousMillis >= interval)
     {
+        digitalWrite(LED, HIGH); // Turn the LED on while recording data
+
         // save the last time a message was sent
         previousMillis = currentMillis;
 
@@ -47,5 +50,10 @@ void loop()
         Serial.print("humidity:  ");
         Serial.print(humidity);
         Serial.println();
+
+        // Delay for the sensor to pick up data
+        delay(2000);
+
+        digitalWrite(LED, LOW); // Turn the LED off when done recording
     }
 }

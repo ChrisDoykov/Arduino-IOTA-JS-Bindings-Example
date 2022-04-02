@@ -10,9 +10,9 @@
 
 const { ClientBuilder } = require('@iota/client');
 const CryptoJS = require('crypto-js');
-const { node, SENSOR_DATA_MESSAGE_INDEX, DATA_SECRET } = process.env;
+const { NODE, SENSOR_DATA_MESSAGE_INDEX, DATA_SECRET } = process.env;
 
-const client = new ClientBuilder().node(node).build();
+const client = new ClientBuilder().node(NODE).build();
 
 client.getInfo().then(console.log).catch(console.error);
 

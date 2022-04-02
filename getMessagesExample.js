@@ -1,5 +1,12 @@
-const { SENSOR_DATA_MESSAGE_INDEX } = process.env;
-
+/*
+  Auhtor: Kristiyan Doykov
+  Student No.: 170780410
+  Purpose: The following script showcases how the IOTA client can be used
+  to retrieve messages from the Tangle, demonstrated by using a random ID
+  to retrieve a single message as well as a given index to retrieve all
+  messages associated with that index.
+  Last Updated: 01 April 2022 
+ */
 async function run() {
   const { ClientBuilder } = require('@iota/client');
 
@@ -19,8 +26,8 @@ async function run() {
   console.log(message_data);
 
   // get indexation data by index
-  const message_ids = await MessageFinder.index(SENSOR_DATA_MESSAGE_INDEX);
-  for (message_id of message_ids) {
+  const message_ids = await MessageFinder.index('IOTA.RS BINDING - NODE.JS');
+  for (let message_id of message_ids) {
     const message_wrapper = await MessageFinder.data(message_id);
     console.log(
       Buffer.from(message_wrapper.message.payload.data, 'hex').toString('utf8')

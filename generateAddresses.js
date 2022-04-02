@@ -1,3 +1,11 @@
+/*
+  Auhtor: Kristiyan Doykov
+  Student No.: 170780410
+  Purpose: The following script can be used to generate IOTA addresses
+  from a given seed value.
+  Last Updated: 01 April 2022 
+ */
+
 async function generateAddresses() {
   const { ClientBuilder } = require('@iota/client');
 

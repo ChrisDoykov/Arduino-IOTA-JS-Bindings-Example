@@ -1,6 +1,6 @@
-# Arduino IOTA Implementation
+# Arduino IOTA Chrysalis Implementation
 
-This is a simple implementation of JS bindings to the IOTA Rust client. The setup uses an Arduino with a connected DHT11 sensor,
+This is a simple implementation of IOTA Rust client JS bindings for the Chrysalis network update. The setup uses an Arduino Nano 33 IoT (although you can use any Arduino board with a Serial connection) with a connected DHT11 sensor and LED,
 which can send to and receive AES-encrypted data from the IOTA Tangle using Indexation Payloads. This setup **does not** work on a standalone
 Arduino and relies on a serial connection to a development machine, capable of running a Node.js environment.
 
@@ -12,11 +12,13 @@ Arduino and relies on a serial connection to a development machine, capable of r
 
 **3.** DHT11 Temperature and humidity sensor
 
+**5.** **(OPTIONAL)** An LED
+
 **4.** A predefined dev.env file with the following variables set:
 
-    - node: e.g. https://api.lb-1.h.chrysalis-devnet.iota.cafe
+    - NODE: e.g. https://api.lb-1.h.chrysalis-devnet.iota.cafe
 
-    - arduinoSerialPort: e.g. /dev/cu.usbmodem1201
+    - ARDUINO_SERIAL_PORT: e.g. /dev/cu.usbmodem1201
 
     - SENSOR_DATA_MESSAGE_INDEX: ARDUINO TANGLE DATA
 

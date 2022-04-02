@@ -14,17 +14,17 @@ const moment = require('moment');
 const CryptoJS = require('crypto-js');
 
 const { ClientBuilder } = require('@iota/client');
-const { node, arduinoSerialPort, SENSOR_DATA_MESSAGE_INDEX, DATA_SECRET } =
+const { NODE, ARDUINO_SERIAL_PORT, SENSOR_DATA_MESSAGE_INDEX, DATA_SECRET } =
   process.env;
 
-const client = new ClientBuilder().node(node).build();
+const client = new ClientBuilder().node(NODE).build();
 
 client.getInfo().then(console.log).catch(console.error);
 
 const serial = new SerialPort({
   baudRate: 9600,
   autoOpen: true,
-  path: arduinoSerialPort,
+  path: ARDUINO_SERIAL_PORT,
 });
 
 const parser = serial.pipe(new ReadlineParser({ delimiter: '\r\n' }));

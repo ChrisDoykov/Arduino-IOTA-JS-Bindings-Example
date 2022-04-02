@@ -1,3 +1,12 @@
+/*
+  Auhtor: Kristiyan Doykov
+  Student No.: 170780410
+  Purpose: The following script can be used to generate an IOTA seed, 
+  mnemonic (memorable information) for the seed as well as a 
+  hex-encoded seed from the original seed + mnemonic.
+  Last Updated: 01 April 2022 
+ */
+
 const crypto = require('crypto');
 const { ClientBuilder } = require('@iota/client');
 
