@@ -37,6 +37,10 @@ Arduino and relies on a serial connection to a development machine, capable of r
 
 ## Installation
 
+First install all npm modules via
+
 ```
 npm install
 ```
+
+Then load the `dht11.ino` sketch onto the Arduino and finally - run one of the scripts.
